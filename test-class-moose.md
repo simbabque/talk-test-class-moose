@@ -85,7 +85,7 @@ sub test_birthday {
     my $bob = Person->new( name => 'Bob', age => '20' );
     is $bob->age, 20, 'Bob starts with the right age';
     $bob->birthday;
-    is $bob->age, 21, 'Bob is a year older after his birthday';
+    is $bob->age, 21, 'Bob is a year older after their birthday';
 }
 
 1;
@@ -131,7 +131,7 @@ t/tests.t ..
     # TestsFor::Person->test_birthday()
         # Subtest: test_birthday
         ok 1 - Bob starts with the right age
-        ok 2 - Bob is a year older after his birthday
+        ok 2 - Bob is a year older after their birthday
         1..2
     ok 1 - test_birthday
 ok 1 - TestsFor::Person
@@ -146,7 +146,7 @@ Result: PASS
 Let's add another test
 
 ``` perl
-sub test_name {
+sub test_constructor {
     my ($test) = @_;
 
     dies_ok { my $bob = Person->new( name => 'Bob' ) }
@@ -164,14 +164,14 @@ sub test_name {
     # TestsFor::Person->test_birthday()
         # Subtest: test_birthday
         ok 1 - Bob starts with the right age
-        ok 2 - Bob is a year older after his birthday
+        ok 2 - Bob is a year older after their birthday
         1..2
     ok 1 - test_birthday
-    # TestsFor::Person->test_name()
-        # Subtest: test_name
+    # TestsFor::Person->test_constructor()
+        # Subtest: test_constructor
         ok 1 - Creating Bob without an age blows up
         1..1
-    ok 2 - test_name
+    ok 2 - test_constructor
 ok 1 - TestsFor::Person
 ```
 ---
